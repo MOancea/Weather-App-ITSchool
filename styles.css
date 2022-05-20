@@ -59,20 +59,25 @@ header {
 }
 
 .scroll-button {
-  background-color: #20294f;
+  background-color: #43518f;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 1;
   position: fixed;
-  right: 50px;
-  bottom: 70px;
+  right: 15px;
+  bottom: 15px;
   padding: 20px;
   border: #dfedf5;
   border-radius: 1cm;
   transition: 1s;
+  /*visibility: hidden;*/
 }
 
 .scroll-button:hover {
   background-color: #383f5d;
+}
+
+.weather-forecast-box > * {
+  flex: 1;
 }

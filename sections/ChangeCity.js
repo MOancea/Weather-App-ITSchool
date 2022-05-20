@@ -1,15 +1,20 @@
 const bucharest = document.querySelector(".dropdown-menu .bucharest");
 const timisoara = document.querySelector(".dropdown-menu .timisoara");
 const oradea = document.querySelector(".dropdown-menu .oradea");
+const arad = document.querySelector(".dropdown-menu .arad");
+const sibiu = document.querySelector(".dropdown-menu .sibiu");
 
 const updateCurrentCity = (city) => {
   const currentCityElement = document.querySelector(".current-city");
   currentCityElement.innerHTML = city;
 };
-
+//Aici se poate adauga fuctionalitati cand se schimba orasul
 const updateWeather = (city) => {
   updateCurrentCity(city);
   displayCurrentWeather(city);
+  displayWeatherForecast(city);
+
+  localStorage.setItem("city", city);
 };
 
 bucharest.addEventListener("click", () => {
@@ -24,10 +29,10 @@ oradea.addEventListener("click", () => {
   updateWeather("Oradea");
 });
 
-oradea.addEventListener("click", () => {
+arad.addEventListener("click", () => {
   updateWeather("Arad");
 });
 
-oradea.addEventListener("click", () => {
+sibiu.addEventListener("click", () => {
   updateWeather("Sibiu");
 });

@@ -1,6 +1,6 @@
 const displayCurrentWeather = (city) => {
   const currentWeatherEndpoint = getCurrentWeatherEndpoint(city);
- console.log(displayCurrentWeather)
+
   fetch(currentWeatherEndpoint).then((response) => {
     response.json().then((data) => {
       const currentWeatherElement = document.querySelector(".current-weather");
@@ -10,8 +10,9 @@ const displayCurrentWeather = (city) => {
 
       const day = getDayOfTheWeek(dt);
       const hours = getHour(dt);
+
       const temperature = Math.round(main.temp);
-      const weatherIcon = getWeatherLink(weather[0].icon);
+      const weatherIcon = getWeatherIconUrl(weather[0].icon);
       const realFeel = Math.round(main.feels_like);
       const weatherDescription = weather[0].description;
       const windSpeed = windToKmPerHour(wind.speed);
